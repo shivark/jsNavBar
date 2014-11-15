@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <style type="text/css">
+        #MobileMainNavLink {
+            float:right;
+        }
+        #nav-wrapper {
+            height: 100%;
+            position: fixed;
+            background: blue;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0 0 10px black inset;
+            transition: width .2s ease-in-out;
+            overflow: hidden;
+        }
+
+        body[data-nav-mode='collapsed'] #nav-wrapper {
+            width: 0;
+        }
+
+        body[data-nav-mode='ribbon'] #nav-wrapper {
+            width: 50px;
+        }
+
+        body[data-nav-mode='expanded'] #nav-wrapper {
+            width: 300px;
+        }
+
+        li {
+            width: 200px;
+        }
+
+        li span {
+            display: inline-block;
+            background: red;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body data-nav-mode='collapsed'>
+<button id="MobileMainNavLink">burger</button>
+
+<nav id="nav-wrapper">
+    <div id="nav">
+        <ul>
+            <li><span></span>adas</li>
+            <li><span></span>aasdad</li>
+            <li><span></span>asdfsfsf</li>
+            <li><span></span>asdfsdf</li>
+            <li><span></span>asdsfsdf</li>
+            <li><span></span>asdfsdfsd</li>
+        </ul>
+    </div>
+</nav>
+<div>
+    Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar
+</div>
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script src="Navbar.js"></script>
+</body>
+</html>
