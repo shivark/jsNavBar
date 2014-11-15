@@ -22,9 +22,9 @@ NavView.prototype.render = function () {
     this.$_el.attr('data-nav-mode', this._model.state);
 }
 
-var statesForScreenSizes = {};
-statesForScreenSizes[ScreenSize.extraSmall] = [NavState.collapsed, NavState.ribbon, NavState.expanded];
-statesForScreenSizes[ScreenSize.small] = [NavState.ribbon, NavState.expanded];
+var transitionStatesForScreenSizes = {};
+transitionStatesForScreenSizes[ScreenSize.extraSmall] = [NavState.collapsed, NavState.ribbon, NavState.expanded];
+transitionStatesForScreenSizes[ScreenSize.small] = [NavState.ribbon, NavState.expanded];
 
 function NavModel(options) {
     options = options || {
@@ -32,7 +32,7 @@ function NavModel(options) {
         onTransition: function () {
         } };
 
-    this._states = statesForScreenSizes[options.screenSize]
+    this._states = transitionStatesForScreenSizes[options.screenSize]
     this.state = this._states[0];
     this._onTransition = options.onTransition;
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>jsNavBar</title>
 
     <style type="text/css">
         #MobileMainNavLink {
@@ -18,22 +18,20 @@
             overflow: hidden;
         }
 
-        body[data-nav-mode='collapsed'] #nav-wrapper {
+        #nav-wrapper.collapsed {
             width: 0;
         }
 
-        body[data-nav-mode='ribbon'] #nav-wrapper {
+        #nav-wrapper.ribbon {
             width: 50px;
         }
 
-        body[data-nav-mode='expanded'] #nav-wrapper {
+        #nav-wrapper.expanded {
             width: 300px;
         }
-
         li {
             width: 200px;
         }
-
         li span {
             display: inline-block;
             background: red;
@@ -44,7 +42,7 @@
 </head>
 <body>
 <button data-bind="click: getNextTransition" id="MobileMainNavLink">burger</button>
-<nav class="" id="nav-wrapper" data-bind="css: className">
+<nav class="" id="nav-wrapper" data-bind="css: navBarClass">
     <div id="nav">
         <ul>
             <li><span></span>adas</li>

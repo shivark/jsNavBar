@@ -4,53 +4,53 @@ var NavState = {
     expanded: 'expanded'
 };
 
-	var ScreenSize = {
-		extraSmall: 'extraSmall',
-		small: 'small'
-	};
-	
-  function getScreenSize() {
-      var smallScreenWidth = 767;
-      return ($(window).width() > smallScreenWidth) ? ScreenSize.small : ScreenSize.extraSmall;
-  }
-	
-function TransitionModel(options){
-	  options = options || {
+var ScreenSize = {
+    extraSmall: 'extraSmall',
+    small: 'small'
+};
+
+var transitionStatesForScreenSizes = {};
+transitionStatesForScreenSizes[ScreenSize.extraSmall] = [NavState.collapsed, NavState.ribbon, NavState.expanded];
+transitionStatesForScreenSizes[ScreenSize.small] = [NavState.ribbon, NavState.expanded];
+
+
+function getScreenSize() {
+    var smallScreenWidth = 767;
+    return ($(window).width() > smallScreenWidth) ? ScreenSize.small : ScreenSize.extraSmall;
+}
+
+function NavBarModel(options){
+
+    this.options = options || {
         screenSize: ScreenSize.small
-	};
+    };
+    this.transitionStates = transitionStatesForScreenSizes[this.options.screenSize];
+    this.state = this.transitionStates[0];
+    this.nextState = function(){
+        var nextState, stateCount, currentStateIndex, nextStateIndex;
 
-	var statesForScreenSizes = {};
-	statesForScreenSizes[ScreenSize.extraSmall] = [NavState.collapsed, NavState.ribbon, NavState.expanded];
-	statesForScreenSizes[ScreenSize.small] = [NavState.ribbon, NavState.expanded];
+        stateCount = this.transitionStates.length;
+        currentStateIndex = this.transitionStates.indexOf(this.state);
 
-    this.transitionStates = statesForScreenSizes[options.screenSize]
-	this.state = this.transitionStates[0];	
-	this.nextState = function(){
-		 var nextState, stateCount, currentStateIndex, nextStateIndex;
+        if (currentStateIndex === stateCount - 1) {
+            nextStateIndex = 0;
+        } else {
+            nextStateIndex = ++currentStateIndex;
+        }
+        this.state = this.transitionStates[nextStateIndex];
+        return this.state;
+    }
 
-			stateCount = this.transitionStates.length;
-			currentStateIndex = this.transitionStates.indexOf(this.state);
-
-			if (currentStateIndex === stateCount - 1) {
-				nextStateIndex = 0;
-			} else {
-				nextStateIndex = ++currentStateIndex;
-			}
-			this.state = this.transitionStates[nextStateIndex];
-			return this.state;
-	}
-	
 }
 
-function AppViewModel() {
-	this.transitionModel = new  TransitionModel({ screenSize: getScreenSize()});
-	this.className = ko.observable(this.transitionModel.state);
-	this.getNextTransition = function(){	
-		this.className(this.transitionModel.nextState());
-	}	
+function NavBarViewModel() {
+    this.transitionModel = new  NavBarModel({ screenSize: getScreenSize()});
+    this.navBarClass = ko.observable(this.transitionModel.state);
+    this.getNextTransition = function(){
+        this.navBarClass(this.transitionModel.nextState());
+    }
 }
 
- 	 
-ko.applyBindings(new AppViewModel());
+ko.applyBindings(new NavBarViewModel());
 
 
