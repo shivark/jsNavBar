@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e66dbc-58d6-423c-ad65-9eeb14241d2b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsNavBar_Knockout/Navbar-KO.js" afterPath="$PROJECT_DIR$/jsNavBar_Knockout/Navbar-KO.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsNavBar_MVC/Navbar.js" afterPath="$PROJECT_DIR$/jsNavBar_MVC/Navbar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsNavBar_Knockout/index.html" afterPath="$PROJECT_DIR$/jsNavBar_Knockout/index.html" />
-    </list>
+    <list default="true" id="72e66dbc-58d6-423c-ad65-9eeb14241d2b" name="Default" comment="" />
     <ignored path="jsNavBar.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="72e66dbc-58d6-423c-ad65-9eeb14241d2b" time="1416052151020" ignored="false" />
@@ -39,10 +35,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Navbar-KO.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Navbar-KO.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jsNavBar_Knockout/Navbar-KO.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="55" selection-start="1550" selection-end="1559" vertical-scroll-proportion="0.95637196">
+            <state line="4" column="84" selection-start="1550" selection-end="1559" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpecRunner.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SpecRunner.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="30" selection-start="600" selection-end="610" vertical-scroll-proportion="0.36213017">
               <folding />
             </state>
           </provider>
@@ -283,7 +288,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jsNavBar_Knockout/Navbar-KO.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="55" selection-start="1550" selection-end="1559" vertical-scroll-proportion="0.95637196">
+        <state line="4" column="84" selection-start="1550" selection-end="1559" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpecRunner.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="30" selection-start="600" selection-end="610" vertical-scroll-proportion="0.36213017">
           <folding />
         </state>
       </provider>
