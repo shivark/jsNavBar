@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>jsNavBar</title>
 
     <style type="text/css">
         #MobileMainNavLink {
@@ -18,22 +18,20 @@
             overflow: hidden;
         }
 
-        body[data-nav-mode='collapsed'] #nav-wrapper {
+        #nav-wrapper.collapsed {
             width: 0;
         }
 
-        body[data-nav-mode='ribbon'] #nav-wrapper {
+        #nav-wrapper.ribbon {
             width: 50px;
         }
 
-        body[data-nav-mode='expanded'] #nav-wrapper {
+        #nav-wrapper.expanded {
             width: 300px;
         }
-
         li {
             width: 200px;
         }
-
         li span {
             display: inline-block;
             background: red;
@@ -42,10 +40,9 @@
         }
     </style>
 </head>
-<body data-nav-mode='collapsed'>
-<button id="MobileMainNavLink">burger</button>
-
-<nav id="nav-wrapper">
+<body>
+<button data-bind="click: getNextTransition" id="MobileMainNavLink">burger</button>
+<nav class="" id="nav-wrapper" data-bind="css: navBarClass">
     <div id="nav">
         <ul>
             <li><span></span>adas</li>
@@ -61,6 +58,7 @@
     Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar Foobar foobar
 </div>
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
-<script src="Navbar.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
+<script src="navbar-ko.js"></script>
 </body>
 </html>

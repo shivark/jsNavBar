@@ -1,3 +1,8 @@
+
+function helloWorld() {
+    return "Hello world!";
+}
+
 var NavState = {
     collapsed: 'collapsed',
     ribbon: 'ribbon',
